@@ -1,7 +1,9 @@
+import { Htag } from '@/components';
+
 export default function Page(): JSX.Element {
   return (
     <>
-      <h1>Hello, Next.js!</h1>
+      <Htag tag='h1'>Text</Htag>
     </>
   );
 }
