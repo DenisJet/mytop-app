@@ -1,7 +1,8 @@
-.filled {
-  fill: var(--primary)
-}
-
-.star svg {
+.star {
   margin-right: 5px;
 }
+
+.filled {
+  fill: var(--primary);
+}
+

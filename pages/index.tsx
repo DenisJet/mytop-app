@@ -30,7 +30,7 @@ export default function Page(): JSX.Element {
         Tag
       </Tag>
       <Tag color='primary'>Tag</Tag>
-      <Rating rating={4} />
+      <Rating rating={2} />
     </>
   );
 }
