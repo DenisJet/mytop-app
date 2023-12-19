@@ -8,19 +8,19 @@ import { ProductModel } from '@/inteafaces/product.interface';
 
 const firstCategory = 0;
 
-function Course({ menu, page, products }: CourseProps): JSX.Element {
-  return <>{products.length}</>;
+function Course({ products }: CourseProps): JSX.Element {
+  return <>{products && products.length}</>;
 }
 
 export default withLayout(Course);
 
-export const GetStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   const { data: menu } = await axios.post<MenuItem[]>(process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find', {
     firstCategory,
   });
 
   return {
-    path: menu.flatMap((m) => m.pages.map((p) => '/courses/' + p.alias)),
+    paths: menu.flatMap((m) => m.pages.map((p) => '/courses/' + p.alias)),
     fallback: true,
   };
 };
