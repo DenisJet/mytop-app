@@ -1,5 +1,5 @@
 import { AppContext } from '@/context/app.context';
-import { FirstLevelMenuItem } from '@/inteafaces/menu.interfaces';
+import { FirstLevelMenuItem, PageItem } from '@/inteafaces/menu.interfaces';
 import { useContext } from 'react';
 import CoursesIcon from './icons/courses.svg';
 import ServicesIcon from './icons/services.svg';
@@ -34,15 +34,44 @@ export const Menu = (): JSX.Element => {
                 <span>{menu.name}</span>
               </div>
             </a>
+            {menu.id == firstCategory && buildSecondLevel(menu)}
           </div>
         ))}
       </>
     );
   };
 
-  const buildSecondLevel = () => {};
+  const buildSecondLevel = (menuItem: FirstLevelMenuItem) => {
+    return (
+      <div>
+        {menu.map((m) => (
+          <div key={m._id.secondCategory}>
+            <div className={styles.secondLevel}>{m._id.secondCategory}</div>
+            <div
+              className={cn(styles.secondLevelBlockOpened, {
+                [styles.secondLevelBlockOpened]: m.isOpened,
+              })}
+            >
+              {buildThirdLevel(m.pages, menuItem.route)}
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+  };
 
-  const buildThirdLevel = () => {};
+  const buildThirdLevel = (pages: PageItem[], route: string) => {
+    return pages.map((p) => (
+      <a
+        href={`/${route}/${p.alias}`}
+        className={cn(styles.thirdLevel, {
+          [styles.thirdLevelActive]: true,
+        })}
+      >
+        {p.category}
+      </a>
+    ));
+  };
 
   return <div className={styles.menu}>{buildFirstLevel()}</div>;
 };
