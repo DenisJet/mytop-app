@@ -31,11 +31,6 @@ function Page({ menu }: PageProps): JSX.Element {
       </Tag>
       <Tag color='primary'>Tag</Tag>
       <Rating rating={rating} isEditable setRating={setRating} />
-      <ul>
-        {menu.map((m) => (
-          <li key={m._id.secondCategory}>{m._id.secondCategory}</li>
-        ))}
-      </ul>
     </>
   );
 }
