@@ -6,8 +6,8 @@ import ServicesIcon from './icons/services.svg';
 import BooksIcon from './icons/books.svg';
 import ProductsIcon from './icons/products.svg';
 import { TopLevelCategory } from '@/inteafaces/page.interface';
-import styles from './Menu.module.css';
 import cn from 'classnames';
+import styles from './Menu.module.css';
 
 const firstLevelMenu: FirstLevelMenuItem[] = [
   { route: 'courses', name: 'Курсы', icon: <CoursesIcon />, id: TopLevelCategory.Courses },
@@ -22,19 +22,19 @@ export const Menu = (): JSX.Element => {
   const buildFirstLevel = () => {
     return (
       <>
-        {firstLevelMenu.map((menu) => (
-          <div key={menu.route}>
-            <a href={`/${menu.route}`}>
+        {firstLevelMenu.map((m) => (
+          <div key={m.route}>
+            <a href={`/${m.route}`}>
               <div
                 className={cn(styles.firstLevel, {
-                  [styles.firstLevelActive]: menu.id == firstCategory,
+                  [styles.firstLevelActive]: m.id == firstCategory,
                 })}
               >
-                {menu.icon}
-                <span>{menu.name}</span>
+                {m.icon}
+                <span>{m.name}</span>
               </div>
             </a>
-            {menu.id == firstCategory && buildSecondLevel(menu)}
+            {m.id == firstCategory && buildSecondLevel(m)}
           </div>
         ))}
       </>
@@ -43,7 +43,7 @@ export const Menu = (): JSX.Element => {
 
   const buildSecondLevel = (menuItem: FirstLevelMenuItem) => {
     return (
-      <div>
+      <div className={styles.secondBlock}>
         {menu.map((m) => (
           <div key={m._id.secondCategory}>
             <div className={styles.secondLevel}>{m._id.secondCategory}</div>
@@ -63,9 +63,10 @@ export const Menu = (): JSX.Element => {
   const buildThirdLevel = (pages: PageItem[], route: string) => {
     return pages.map((p) => (
       <a
+        key={p._id}
         href={`/${route}/${p.alias}`}
         className={cn(styles.thirdLevel, {
-          [styles.thirdLevelActive]: true,
+          [styles.thirdLevelActive]: false,
         })}
       >
         {p.category}
