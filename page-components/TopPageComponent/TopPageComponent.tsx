@@ -1,6 +1,7 @@
 import { HhData, Htag, Tag } from '@/components';
 import { TopPageComponentProps } from './TopPageComponent.props';
 import styles from './TopPageComponent.module.css';
+import { TopLevelCategory } from '@/inteafaces/page.interface';
 
 export const TopPageComponent = ({ page, products, firstCategory }: TopPageComponentProps): JSX.Element => {
   return (
@@ -21,7 +22,7 @@ export const TopPageComponent = ({ page, products, firstCategory }: TopPageCompo
           hh.ru
         </Tag>
       </div>
-      <HhData {...page.hh} />
+      {firstCategory == TopLevelCategory.Courses && <HhData {...page.hh} />}
     </div>
   );
 };
