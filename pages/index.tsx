@@ -1,5 +1,5 @@
 import { withLayout } from '@/Layout/Layout';
-import { Button, Htag, Input, Ptag, Rating, Tag } from '@/components';
+import { Button, Htag, Input, Ptag, Rating, Tag, Textarea } from '@/components';
 import { GetStaticProps } from 'next';
 import { useState } from 'react';
 import axios from 'axios';
@@ -32,6 +32,7 @@ function Page({ menu }: PageProps): JSX.Element {
       <Tag color='primary'>Tag</Tag>
       <Rating rating={rating} isEditable setRating={setRating} />
       <Input placeholder='test' />
+      <Textarea placeholder='test textarea' />
     </>
   );
 }
