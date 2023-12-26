@@ -1,5 +1,5 @@
 import { withLayout } from '@/Layout/Layout';
-import { Button, Htag, Input, Ptag, Rating, Tag, Textarea } from '@/components';
+import { Button, Htag, Input, PTag, Rating, Tag, Textarea } from '@/components';
 import { GetStaticProps } from 'next';
 import { useState } from 'react';
 import axios from 'axios';
@@ -17,9 +17,9 @@ function Page({ menu }: PageProps): JSX.Element {
       <Button appearance='ghost' arrow='down'>
         Button
       </Button>
-      <Ptag fontSize='large'>P tag large text</Ptag>
-      <Ptag>P tag medium text</Ptag>
-      <Ptag fontSize='small'>P tag small text</Ptag>
+      <PTag fontSize='large'>P tag large text</PTag>
+      <PTag>P tag medium text</PTag>
+      <PTag fontSize='small'>P tag small text</PTag>
       <Tag size='small' color='ghost'>
         Tag
       </Tag>

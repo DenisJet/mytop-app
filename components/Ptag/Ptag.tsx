@@ -1,8 +1,8 @@
-import { PtagProps } from './Ptag.props';
-import styles from './Ptag.module.css';
+import styles from './PTag.module.css';
 import cn from 'classnames';
+import { PtagProps } from './Ptag.props';
 
-export const Ptag = ({ children, fontSize = 'medium', className, ...props }: PtagProps): JSX.Element => {
+export const PTag = ({ children, fontSize = 'medium', className, ...props }: PtagProps): JSX.Element => {
   return (
     <p
       className={cn(styles.p, className, {
