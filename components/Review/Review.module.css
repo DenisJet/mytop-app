@@ -7,6 +7,10 @@
   line-height: 24px;
 }
 
+.review:not(:last-child) {
+  margin-bottom: 20px;
+}
+
 .description {
   grid-column: start / end;
 }
