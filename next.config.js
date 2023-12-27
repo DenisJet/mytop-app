@@ -1,6 +1,13 @@
 module.exports = {
   images: {
-    domains: ['courses-top.ru'],
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '3001',
+        pathname: '/uploads/**',
+      },
+    ],
   },
   webpack(config, options) {
     config.module.rules.push({
