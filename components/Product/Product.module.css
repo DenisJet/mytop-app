@@ -18,6 +18,7 @@
 .price,
 .priceTitle {
   grid-column: pricestart / priceend;
+  white-space: nowrap;
 }
 
 .credit,
@@ -28,6 +29,7 @@
 .rating,
 .ratingTitle {
   grid-column: ratestart / end;
+  white-space: nowrap;
 }
 
 .hr,
@@ -243,6 +245,41 @@
 
   .rating {
     margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .product {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "logo"
+      "title"
+      "tags"
+      "price"
+      "priceTitle"
+      "credit"
+      "creditTitle"
+      "rating"
+      "ratingTitle"
+      "hr"
+      "description"
+      "features"
+      "advBlock"
+      "hr2"
+      "actions"
+    ;
+  }
+
+  .price,
+  .credit,
+  .rating {
+    margin-bottom: 0;
+  }
+
+  .priceTitle,
+  .creditTitle,
+  .ratingTitle {
+    margin-bottom: 20px;
   }
 }
 
