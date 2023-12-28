@@ -6,4 +6,7 @@ export const API = {
   product: {
     find: process.env.NEXT_PUBLIC_DOMAIN + '/api/product/find',
   },
+  review: {
+    create: process.env.NEXT_PUBLIC_DOMAIN + '/api/review/create',
+  },
 };
