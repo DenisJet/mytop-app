@@ -23,12 +23,12 @@ export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className={cn(styles.reviewForm, className)} {...props}>
         <Input
-          {...(register('name'), { required: { value: true, message: 'Заполните Имя' } })}
+          {...(register('name'), { required: { value: true, message: 'Введите заголовок' } })}
           placeholder='Имя'
           error={errors.name}
         />
         <Input
-          {...(register('title'), { required: { value: true, message: 'Заполните заголовок' } })}
+          {...(register('title'), { required: { value: true, message: 'Введите заголовок' } })}
           placeholder='Заголовок отзыва'
           className={styles.title}
           error={errors.title}
@@ -38,8 +38,15 @@ export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):
           <Controller
             control={control}
             name='rating'
+            rules={{ required: { value: true, message: 'Укажите рейтинг' } }}
             render={({ field }) => (
-              <Rating rating={field.value} isEditable ref={field.ref} setRating={field.onChange} />
+              <Rating
+                rating={field.value}
+                isEditable
+                ref={field.ref}
+                setRating={field.onChange}
+                error={errors.rating}
+              />
             )}
           />
         </div>

@@ -8,7 +8,7 @@ export const Input = forwardRef(
     return (
       <div className={cn(className, styles.inputWrapper)}>
         <input
-          className={cn(styles.input, {
+          className={cn(className, styles.input, {
             [styles.error]: error,
           })}
           ref={ref}
