@@ -23,12 +23,12 @@ export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className={cn(styles.reviewForm, className)} {...props}>
         <Input
-          {...(register('name'), { required: { value: true, message: 'Введите заголовок' } })}
+          {...register('name', { required: { value: true, message: 'Введите заголовок' } })}
           placeholder='Имя'
           error={errors.name}
         />
         <Input
-          {...(register('title'), { required: { value: true, message: 'Введите заголовок' } })}
+          {...register('title', { required: { value: true, message: 'Введите заголовок' } })}
           placeholder='Заголовок отзыва'
           className={styles.title}
           error={errors.title}
@@ -51,7 +51,7 @@ export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):
           />
         </div>
         <Textarea
-          {...(register('description'), { required: { value: true, message: 'Заполните описание' } })}
+          {...register('description', { required: { value: true, message: 'Заполните описание' } })}
           placeholder='Текст отзыва'
           className={styles.description}
           error={errors.description}
