@@ -1,4 +1,4 @@
-import { Button, Card, Divider, Rating, Review, Tag } from '..';
+import { Button, Card, Divider, Rating, Review, ReviewForm, Tag } from '..';
 import { ProductProps } from './Product.props';
 import styles from './Product.module.css';
 import cn from 'classnames';
@@ -90,8 +90,12 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
         })}
       >
         {product.reviews.map((r) => (
-          <Review key={r._id} review={r} />
+          <>
+            <Review key={r._id} review={r} />
+            <Divider />
+          </>
         ))}
+        <ReviewForm productId={product._id} />
       </Card>
     </>
   );
