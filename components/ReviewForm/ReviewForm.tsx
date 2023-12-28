@@ -24,7 +24,9 @@ export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):
           <Controller
             control={control}
             name='rating'
-            render={({ field }) => <Rating rating={field.value} isEditable setRating={field.onChange} />}
+            render={({ field }) => (
+              <Rating rating={field.value} isEditable ref={field.ref} setRating={field.onChange} />
+            )}
           />
         </div>
         <Textarea {...register('description')} placeholder='Текст отзыва' className={styles.description} />
