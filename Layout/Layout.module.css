@@ -36,14 +36,10 @@
       "body"
       "footer"
   ;
-  
+    gap: 10px;
   }
   .sidebar {
     display: none !important;
-  }
-
-  .header {
-    display: block;
   }
 
   .body {
