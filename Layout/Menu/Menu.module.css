@@ -26,9 +26,7 @@
   text-transform: uppercase;
   color: var(--gray-dark);
   font-size: 12px;
-  font-style: normal;
   font-weight: 300;
-  line-height: normal;
 }
 
 .secondBlock {
@@ -48,9 +46,8 @@
   cursor: pointer;
   color: var(--gray-dark);
   font-size: 14px;
-  font-style: normal;
   font-weight: 500;
-  line-height: normal;
+  outline-offset: -1px;
 }
 
 .thirdLevelActive,
