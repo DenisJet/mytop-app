@@ -89,16 +89,20 @@ export const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewF
         </div>
       </div>
       {isSuccess && (
-        <div className={cn(styles.success, styles.panel)}>
+        <div className={cn(styles.success, styles.panel)} role='alert'>
           <div className={styles.successTitle}>Ваш отзыв отправлен</div>
           <div>Спасибо Ваш отзыв будет опубликован после проверки.</div>
-          <CloseIcon className={styles.close} onClick={() => setIsSuccess(false)} />
+          <button className={styles.close} onClick={() => setIsSuccess(false)} aria-label='Закрыть оповещение'>
+            <CloseIcon />
+          </button>
         </div>
       )}
       {isError && (
-        <div className={cn(styles.error, styles.panel)}>
+        <div className={cn(styles.error, styles.panel)} role='alert'>
           Что-то пошло не так на сервере, попробуйте обновить страницу.
-          <CloseIcon className={styles.close} onClick={() => setIsError(undefined)} />
+          <button className={styles.close} onClick={() => setIsError(undefined)} aria-label='Закрыть оповещение'>
+            <CloseIcon />
+          </button>
         </div>
       )}
     </form>
