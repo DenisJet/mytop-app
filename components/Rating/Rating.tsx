@@ -48,7 +48,7 @@ export const Rating = forwardRef(
             role={isEditable ? 'slider' : ''}
             aria-label={isEditable ? 'Укажите рейтинг' : 'рейтинг' + rating}
             aria-invalid={error ? true : false}
-            aria-aria-valuenow={rating}
+            aria-valuenow={rating}
             aria-valuemax={5}
             aria-valuemin={1}
           >
