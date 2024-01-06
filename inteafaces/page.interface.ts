@@ -20,8 +20,6 @@ export interface HhData {
 }
 
 export interface TopPageModel {
-  metaTitle: string;
-  metaDescription: string;
   tags: string[];
   _id: string;
   firstCategory: TopLevelCategory;
@@ -35,4 +33,6 @@ export interface TopPageModel {
   tagsTitle: string;
   createdAt: string;
   updatedAt: string;
+  metaTitle: string;
+  metaDescription: string;
 }
