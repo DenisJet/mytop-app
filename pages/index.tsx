@@ -5,9 +5,14 @@ import { useState } from 'react';
 import axios from 'axios';
 import { MenuItem } from '@/inteafaces/menu.interfaces';
 import { API } from '@/helpers/api';
+//import { Error404 } from './404';
+//import Error from 'next/error';
 
 function Page(): JSX.Element {
   const [rating, setRating] = useState<number>(4);
+
+  //return <Error statusCode={404} />;
+  //return <Error404 />;
 
   return (
     <>
