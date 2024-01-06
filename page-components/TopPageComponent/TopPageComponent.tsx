@@ -5,7 +5,6 @@ import { TopLevelCategory } from '@/inteafaces/page.interface';
 import { SortEnum } from '@/components/Sort/Sort.props';
 import { useEffect, useReducer } from 'react';
 import { SortReducer } from './sort.reducer';
-import { useScrollY } from '@/hooks/useScrollY';
 import { useReducedMotion } from 'framer-motion';
 
 export const TopPageComponent = ({ page, products, firstCategory }: TopPageComponentProps): JSX.Element => {

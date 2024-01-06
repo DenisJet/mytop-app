@@ -3,7 +3,6 @@ import styles from './Rating.module.css';
 import cn from 'classnames';
 import { ForwardedRef, KeyboardEvent, forwardRef, useEffect, useRef, useState } from 'react';
 import StarIcon from './star.svg';
-import { error } from 'console';
 
 export const Rating = forwardRef(
   (
@@ -113,3 +112,5 @@ export const Rating = forwardRef(
     );
   }
 );
+
+Rating.displayName = 'Rating';

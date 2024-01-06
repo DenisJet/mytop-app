@@ -5,6 +5,7 @@
 		"@typescript-eslint"
 	],
 	"rules": {
+		"ignoreTranspilerName": true ,
 		"semi": "off",
 		"@typescript-eslint/semi": [
 			"warn"
