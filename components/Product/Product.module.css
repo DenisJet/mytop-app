@@ -1,6 +1,7 @@
 .product {
   display: grid;
   grid-template-columns: [start] 70px [logoend] 30px [titlestart] calc(50% - 100px) [middle] 1fr [pricestart] auto [priceend] 40px [creditstart] auto [creditend] 40px [ratestart] auto [end];
+
   margin-top: 30px;
   padding: 30px;
 }
@@ -18,6 +19,7 @@
 .price,
 .priceTitle {
   grid-column: pricestart / priceend;
+
   white-space: nowrap;
 }
 
@@ -29,6 +31,7 @@
 .rating,
 .ratingTitle {
   grid-column: ratestart / end;
+
   white-space: nowrap;
 }
 
@@ -44,6 +47,8 @@
 
 .advBlock {
   grid-column: middle / end;
+
+  font-size: 16px;
 }
 
 .logo img {
@@ -51,16 +56,18 @@
 }
 
 .title {
+  align-self: flex-end;
+
   font-size: 20px;
   font-weight: 600;
-  align-self: flex-end;
 }
 
 .price,
 .credit {
+  align-self: flex-end;
+
   font-size: 20px;
   font-weight: 400;
-  align-self: flex-end;
 }
 
 .rating {
@@ -87,44 +94,46 @@
 }
 
 .description {
+  margin-bottom: 15px;
+
   font-size: 16px;
   line-height: 24px;
-  margin-bottom: 15px;
 }
 
 .reviewButton {
   margin-left: 20px;
 }
 
-.advBlock {
-  font-size: 16px;
-}
-
 .advTitle {
+  margin-bottom: 5px;
+
   font-size: 16px;
   font-weight: 700;
-  margin-bottom: 5px;
 }
 
 .advantages {
-  border-left: 2px solid #1DC37E;
-  padding-left: 15px;
   margin-bottom: 20px;
+  padding-left: 15px;
+
+  border-left: 2px solid #1DC37E;
 }
 
 .disAdvantages {
-  border-left: 2px solid var(--red);
   padding-left: 15px;
+
+  border-left: 2px solid var(--red);
 }
 
 .characteristics {
   display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 10px;
+  align-items: baseline;
+
   padding-right: 60px;
+
   font-size: 16px;
   line-height: 32px;
-  align-items: baseline;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
 }
 
 .characteristicsName {
@@ -132,15 +141,16 @@
 }
 
 .characteristicsDots {
-  border-bottom: 1px dashed var(--gray-light);
   margin-bottom: 5px;
+
+  border-bottom: 1px dashed var(--gray-light);
 }
 
 .ratingTitle a {
   color: var(--primary);
 }
 
-@media screen and (max-width: 1320px) {
+@media screen and (width <= 1320px) {
   .product {
     grid-template-columns: 70px 30px auto 40px auto 40px 1fr;
     grid-template-areas: 
@@ -159,6 +169,7 @@
 
   .logo {
     grid-area: logo;
+
     margin-bottom: 20px;
   }
 
@@ -168,6 +179,7 @@
 
   .tags {
     grid-area: tags;
+
     margin-bottom: 20px;
   }
 
@@ -205,6 +217,7 @@
 
   .features {
     grid-area: features;
+
     margin-bottom: 20px;
   }
 
@@ -221,7 +234,7 @@
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (width <= 640px) {
   .product {
     grid-template-columns: 70px 30px 1fr;
     grid-template-areas: 
@@ -252,7 +265,7 @@
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (width <= 480px) {
   .product {
     grid-template-columns: 1fr;
     grid-template-areas: 
@@ -292,12 +305,13 @@
   }
 
   .reviewButton {
-    margin-left: 0;
     margin-top: 20px;
+    margin-left: 0;
   }
 }
 
 .reviews {
   overflow: hidden;
+
   padding: 30px;
 }
