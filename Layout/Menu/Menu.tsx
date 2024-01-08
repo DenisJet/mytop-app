@@ -112,7 +112,7 @@ export const Menu = (): JSX.Element => {
 
   const buildThirdLevel = (pages: PageItem[], route: string, isOpened: boolean) => {
     return pages.map((p) => (
-      <motion.li key={p._id} variants={variantsChildren}>
+      <motion.li key={p._id} variants={variantsChildren} suppressHydrationWarning>
         <Link
           tabIndex={isOpened ? 0 : 1}
           href={`/${route}/${p.alias}`}

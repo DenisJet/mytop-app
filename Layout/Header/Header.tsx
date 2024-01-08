@@ -40,6 +40,7 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
         variants={variants}
         initial={'closed'}
         animate={isOpened ? 'opened' : 'closed'}
+        suppressHydrationWarning
       >
         <Sidebar />
         <ButtonIcon className={styles.menuClose} appearance='white' icon='close' onClick={() => setIsOpened(false)} />

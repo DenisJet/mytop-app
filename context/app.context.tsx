@@ -1,4 +1,4 @@
-import { PropsWithChildren, ReactNode, createContext, useState } from 'react';
+import { PropsWithChildren, createContext, useState } from 'react';
 import { MenuItem } from '../inteafaces/menu.interfaces';
 import { TopLevelCategory } from '../inteafaces/page.interface';
 
