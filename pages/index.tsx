@@ -1,5 +1,5 @@
 import { withLayout } from '@/Layout/Layout';
-import { Button, Htag, Input, PTag, Rating, Tag, Textarea } from '@/components';
+import { Htag } from '@/components';
 import { GetStaticProps } from 'next';
 import { useState } from 'react';
 import axios from 'axios';
@@ -16,29 +16,8 @@ function Page(): JSX.Element {
 
   return (
     <>
-      <Htag tag='h1'>Text</Htag>
-      <Button appearance='primary' arrow='right'>
-        Button
-      </Button>
-      <Button appearance='ghost' arrow='down'>
-        Button
-      </Button>
-      <PTag fontSize='large'>P tag large text</PTag>
-      <PTag>P tag medium text</PTag>
-      <PTag fontSize='small'>P tag small text</PTag>
-      <Tag size='small' color='ghost'>
-        Tag
-      </Tag>
-      <Tag size='medium' color='red'>
-        Tag
-      </Tag>
-      <Tag size='medium' color='green'>
-        Tag
-      </Tag>
-      <Tag color='primary'>Tag</Tag>
-      <Rating rating={rating} isEditable setRating={setRating} />
-      <Input placeholder='test' />
-      <Textarea placeholder='test textarea' />
+      <Htag tag='h1'>Добро пожаловать в Самый лучший топ!!!</Htag>
+      <Htag tag='h2'>Пожалуйста, выберите категорию.</Htag>
     </>
   );
 }

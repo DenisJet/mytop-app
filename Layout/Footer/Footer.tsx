@@ -7,12 +7,8 @@ export const Footer = ({ className, ...props }: FooterProps): JSX.Element => {
   return (
     <footer {...props} className={cn(className, styles.footer)}>
       <div>MyTop © 2022 - {format(new Date(), 'yyyy')} Все права защищены</div>
-      <a href='#' target='_blank'>
-        Пользовательское соглашение
-      </a>
-      <a href='#' target='_blank'>
-        Политика конфиденциальности
-      </a>
+      <a href='/'>Пользовательское соглашение</a>
+      <a href='/'>Политика конфиденциальности</a>
     </footer>
   );
 };
