@@ -1,5 +1,5 @@
 import { withLayout } from '@/Layout/Layout';
-import { Htag } from '@/components';
+import { Htag, PTag } from '@/components';
 import { GetStaticProps } from 'next';
 import { useState } from 'react';
 import axios from 'axios';
@@ -17,7 +17,8 @@ function Page(): JSX.Element {
   return (
     <>
       <Htag tag='h1'>Добро пожаловать в Самый лучший топ!!!</Htag>
-      <Htag tag='h2'>Пожалуйста, выберите категорию.</Htag>
+      <Htag tag='h2'>Пожалуйста, выберите категорию курсов.</Htag>
+      <PTag>(остальные категории пока в разработке)</PTag>
     </>
   );
 }
