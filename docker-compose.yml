@@ -1,5 +1,25 @@
 version: '3'
 services:
+  mongo:
+    image: mongo:4.4.4
+    container_name: mytop-mongo
+    restart: always
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo-data-4.4:/data/db
+    command: --wiredTigerCacheSizeGB 1.5
+  top.api:
+    image: ghcr.io/denisjet/mytop-api/mytop-api:latest
+    container_name: mytop-api
+    restart: always
+    ports:
+      - 3001:3001
+    volumes:
+      - ./.env:/opt/app/.env
   top.app:
     image: mytop-app
     container_name: mytop-app
