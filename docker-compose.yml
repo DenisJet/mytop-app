@@ -1,7 +1,7 @@
 version: '3'
 services:
   top.app:
-    image: ghcr.io/denisjet/mytop-app/mytop-app:latest
+    image: mytop-app
     container_name: mytop-app
     restart: always
     ports:
