@@ -36,4 +36,3 @@ yarn-error.log*
 next-env.d.ts
 
 mongo-data-4.4
-/.env
