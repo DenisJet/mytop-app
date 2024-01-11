@@ -6,23 +6,3 @@ services:
     restart: always
     ports:
       - 3000:3000
-  top.api:
-    image: ghcr.io/denisjet/mytop-api/mytop-api:latest
-    container_name: mytop-api1
-    restart: always
-    ports:
-      - 3001:3001
-    volumes:
-      - ./.env:/mytop-api/.env
-  mongo:
-    image: mongo:4.4.4
-    container_name: mytop-mongo1
-    restart: always
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=admin
-      - MONGO_INITDB_ROOT_PASSWORD=admin
-    ports:
-      - 27017:27017
-    volumes:
-      - ./mongo-data-4.4:/data/db
-    command: --wiredTigerCacheSizeGB 1.5    
