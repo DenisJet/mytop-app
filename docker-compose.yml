@@ -3,6 +3,7 @@ services:
   top.app:
     image: ghcr.io/denisjet/mytop-app/mytop-app:latest
     container_name: mytop-app
+    pull_policy: always
     restart: always
     ports:
       - 3000:3000
