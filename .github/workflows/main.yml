@@ -15,7 +15,7 @@ jobs:
       - name: Publish to registy
         uses: elgohr/Publish-Docker-Github-Action@v5
         env.production:
-          NEXT_PUBLIC_DOMAIN: mytop-api:3001
+          NEXT_PUBLIC_DOMAIN: mytop-api
         with:
           registry: ghcr.io
           name: DenisJet/mytop-app/mytop-app
